@@ -19,7 +19,7 @@ export default function PetList() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/users')
+      .get('https://attendance.rd-lab.work/api/users')
       .then((response) => {
         setUsers(response.data.users);
       })
@@ -107,7 +107,7 @@ export default function PetList() {
   const [tracking, setTracking] = useState([]);
 useEffect(() => {
   axios
-    .get('http://127.0.0.1:8000/api/trackings')
+    .get('https://attendance.rd-lab.work/api/trackings')
     .then((response) => {
       setTracking(response.data.trackings);
     })
@@ -193,7 +193,7 @@ useEffect(() => {
   const [pets, setPets] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/pets')
+      .get('https://attendance.rd-lab.work/api/pets')
       .then((response) => {
         const nonRemovedPets = response.data.pets.filter((pet) => !pet.is_removed);
         setPets(nonRemovedPets);
@@ -213,7 +213,7 @@ useEffect(() => {
     };
   
     axios
-      .post('http://127.0.0.1:8000/api/adoptions', newRequest)
+      .post('https://attendance.rd-lab.work/api/adoptions', newRequest)
       .then((response) => {
         // Assuming response.data contains the new adoption entry
         setAdoptionRequest((prevAdoptionRequest) => [...prevAdoptionRequest, response.data]);
@@ -266,7 +266,7 @@ useEffect(() => {
         {/* <div className="flex flex-col"> */}
         {/* header img */}
         <div className='relative m-4'>
-          <img className='h-full w-full object-cover object-center' src='../images/adoptmedog.jpg' alt='About us dog' />
+          <img className='h-full w-full object-cover object-center' src='https://hips.hearstapps.com/hmg-prod/images/pet-adoption-royalty-free-image-495386789-1539798087.jpg' alt='About us dog' />
           <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center p-4'>
             <h1 className='md:text-2xl lg:text-6xl font-bold'>RESCUE ANIMALS IN NEEDS</h1>
           </div>

@@ -45,9 +45,9 @@ const TableForm = () => {
 
   useEffect(() => {
     axios.all([
-      axios.get('http://127.0.0.1:8000/api/adoptions'),
-      axios.get('http://127.0.0.1:8000/api/pets?withTrashed=true'),
-      axios.get('http://127.0.0.1:8000/api/users')
+      axios.get('https://attendance.rd-lab.work/api/adoptions'),
+      axios.get('https://attendance.rd-lab.work/api/pets?withTrashed=true'),
+      axios.get('https://attendance.rd-lab.work/api/users')
     ])
     .then(axios.spread((adoptionsResponse, petsResponse, usersResponse) => {
       const adoptionsData = adoptionsResponse.data.adoptions;

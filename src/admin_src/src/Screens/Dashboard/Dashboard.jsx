@@ -22,7 +22,7 @@ const Dashboard = () => {
   const [pets, setPets] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/pets')
+      .get('https://attendance.rd-lab.work/api/pets')
       .then((response) => {
         setPets(response.data.pets);
       })
@@ -39,7 +39,7 @@ const Dashboard = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/users')
+      .get('https://attendance.rd-lab.work/api/users')
       .then((response) => {
         const normalUser = response.data.users.filter((user) => user.role_id === 2);
         setUsers(normalUser);
@@ -54,7 +54,7 @@ const Dashboard = () => {
   const [userVerified, setUserVerified] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/users')
+      .get('https://attendance.rd-lab.work/api/users')
       .then((response) => {
         const data = response.data.users;
         const normalUser = data.filter((user) => user.role_id === 2 && user.is_verified);
@@ -70,7 +70,7 @@ const Dashboard = () => {
   const [userRequest, setUserRequest] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/users')
+      .get('https://attendance.rd-lab.work/api/users')
       .then((response) => {
         const normalUser = response.data.users.filter((user) => user.role_id === 2 && !user.is_verified);
         setUserRequest(normalUser);
@@ -86,7 +86,7 @@ const Dashboard = () => {
   const [tracking, setTracking] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/trackings')
+      .get('https://attendance.rd-lab.work/api/trackings')
       .then((response) => {
         const normalUser = response.data.trackings;
         setTracking(normalUser);
@@ -103,7 +103,7 @@ const Dashboard = () => {
   const [completedTracking, setCompletedTracking] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/trackings')
+      .get('https://attendance.rd-lab.work/api/trackings')
       .then((response) => {
         const normalUser = response.data.trackings.filter((tracking) => tracking.is_completed);
         setCompletedTracking(normalUser);
@@ -119,7 +119,7 @@ const Dashboard = () => {
   const [pendingTracking, setPendingTracking] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/trackings')
+      .get('https://attendance.rd-lab.work/api/trackings')
       .then((response) => {
         const normalUser = response.data.trackings.filter((tracking) => !tracking.is_completed);
         setPendingTracking(normalUser);
@@ -135,7 +135,7 @@ const Dashboard = () => {
   const [adoptions, setAdoptions] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/adoptions')
+      .get('https://attendance.rd-lab.work/api/adoptions')
       .then((response) => {
         setAdoptions(response.data.adoptions);
       })
@@ -148,7 +148,7 @@ const Dashboard = () => {
   const [adoptionRequest, setAdoptionRequest] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/adoptions')
+      .get('https://attendance.rd-lab.work/api/adoptions')
       .then((response) => {
        const adoptRequest = response.data.adoptions.filter((adoption) => !adoption.is_approved);
         setAdoptionRequest(adoptRequest);
@@ -164,7 +164,7 @@ const Dashboard = () => {
   const [post, setPost] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/posts')
+      .get('https://attendance.rd-lab.work/api/posts')
       .then((response) => {
         setPost(response.data.posts);
       })
@@ -176,7 +176,7 @@ const Dashboard = () => {
   const [donations, setDonations] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/donations')
+      .get('https://attendance.rd-lab.work/api/donations')
       .then((response) => {
         setDonations(response.data.donations);
       })

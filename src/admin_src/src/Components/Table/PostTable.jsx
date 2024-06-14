@@ -50,7 +50,7 @@ const PostTable = () => {
     if (selectedPost) {
       
       axios
-        .put(`http://127.0.0.1:8000/api/posts/valid/${id}`, selectedPost)
+        .put(`https://attendance.rd-lab.work/api/posts/valid/${id}`, selectedPost)
         .then((response) => {
           console.log('Post reported successfully:', response.data);
           closeApprovedModal();
@@ -69,7 +69,7 @@ const PostTable = () => {
     if (selectedPost) {
       
       axios
-        .put(`http://127.0.0.1:8000/api/posts/unvalid/${id}`, selectedPost)
+        .put(`https://attendance.rd-lab.work/api/posts/unvalid/${id}`, selectedPost)
         .then((response) => {
           console.log('Post reported successfully:', response.data);
           closeApprovedModal();
@@ -86,7 +86,7 @@ const PostTable = () => {
     
      
       axios
-        .delete(`http://127.0.0.1:8000/api/posts/${id}`)
+        .delete(`https://attendance.rd-lab.work/api/posts/${id}`)
         .then((response) => {
           console.log('Post deleted successfully:', response.data);
           closeDeleteModal();
@@ -106,7 +106,7 @@ const PostTable = () => {
     if (selectedPost) {
       
       axios
-        .put(`http://127.0.0.1:8000/api/posts/approved/${id}`, selectedPost)
+        .put(`https://attendance.rd-lab.work/api/posts/approved/${id}`, selectedPost)
         .then((response) => {
           console.log('Post approved successfully:', response.data);
           closeEditModal();
@@ -159,8 +159,8 @@ const PostTable = () => {
 
   useEffect(() => {
     axios.all([
-      axios.get('http://127.0.0.1:8000/api/posts'),
-      axios.get('http://127.0.0.1:8000/api/users'),
+      axios.get('https://attendance.rd-lab.work/api/posts'),
+      axios.get('https://attendance.rd-lab.work/api/users'),
       
     ])
     .then(axios.spread((postResponse, usersResponse) => {
@@ -193,7 +193,7 @@ const PostTable = () => {
 
   const [shownBreeds, setShownBreeds] = useState([]);
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/breeds')
+    axios.get('https://attendance.rd-lab.work/api/breeds')
       .then((response) => {
         setShownBreeds(response.data.breeds);
       })
@@ -204,7 +204,7 @@ const PostTable = () => {
 
   const [shownCategory, setShownCategory] = useState([]);
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/categories')
+    axios.get('https://attendance.rd-lab.work/api/categories')
       .then((response) => {
         setShownCategory(response.data.category);
       })

@@ -44,7 +44,7 @@ export function NavigateBar() {
 
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/trackings')
+      .get('https://attendance.rd-lab.work/api/trackings')
       .then((response) => {
         const data = response.data.trackings;
         const completedTracking = data.filter((tracking) => !tracking.is_completed);

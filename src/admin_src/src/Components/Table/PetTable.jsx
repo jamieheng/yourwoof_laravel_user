@@ -154,7 +154,7 @@ const PetTable = () => {
         setPetCate(categoryId);
         setIsInvalidCate(isNaN(categoryId)); 
         try {
-          const response = await axios.get(`http://127.0.0.1:8000/api/breeds`);
+          const response = await axios.get(`https://attendance.rd-lab.work/api/breeds`);
           const filteredBreeds = response.data.breeds.filter((breed) => breed.cate_id === categoryId);
           setBreeds(filteredBreeds);
         } catch (error) {
@@ -221,7 +221,7 @@ const PetTable = () => {
   const [pets, setPets] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/pets')
+      .get('https://attendance.rd-lab.work/api/pets')
       .then((response) => {
        
         setPets(response.data.pets);
@@ -247,7 +247,7 @@ const PetTable = () => {
     console.log(newPet)
   
     axios
-      .post('http://127.0.0.1:8000/api/pets', newPet)
+      .post('https://attendance.rd-lab.work/api/pets', newPet)
       .then((response) => {
         setPets((prevPets) => [...prevPets, response.data]);
         // closeAddModal();
@@ -272,7 +272,7 @@ const PetTable = () => {
     };
 
     axios
-      .put(`http://127.0.0.1:8000/api/pets/${id}`, updatedPet) // Use editModalPetId here
+      .put(`https://attendance.rd-lab.work/api/pets/${id}`, updatedPet) // Use editModalPetId here
       .then((response) => {
         setPets((prevPets) => prevPets.map((pets) => (pets.id === id ? response.data : pets)));
         fetchPets();
@@ -290,7 +290,7 @@ const PetTable = () => {
     if (selectedPet) {
       
       axios
-        .delete(`http://127.0.0.1:8000/api/pets/${id}`)
+        .delete(`https://attendance.rd-lab.work/api/pets/${id}`)
         .then((response) => {
           console.log('Pet removed successfully:', response.data);
           closeAddModal();
@@ -311,7 +311,7 @@ const PetTable = () => {
 
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/categories')
+    axios.get('https://attendance.rd-lab.work/api/categories')
       .then((response) => {
         setCategory(response.data.category);
       })
@@ -322,7 +322,7 @@ const PetTable = () => {
 
   const [shownBreeds, setShownBreeds] = useState([]);
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/breeds')
+    axios.get('https://attendance.rd-lab.work/api/breeds')
       .then((response) => {
         setShownBreeds(response.data.breeds);
       })
@@ -334,7 +334,7 @@ const PetTable = () => {
 
   const fetchPets = () => {
     axios
-      .get('http://127.0.0.1:8000/api/pets')
+      .get('https://attendance.rd-lab.work/api/pets')
       .then((response) => {
         setPets(response.data.pets);
       })

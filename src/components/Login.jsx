@@ -23,7 +23,7 @@ function Login() {
   useEffect(() => {
     const fetchAuth = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/users`);
+        const response = await axios.get(`https://attendance.rd-lab.work/api/users`);
         if (response.status === 200) {
           setAuthData(response.data.users);
         }
@@ -48,7 +48,7 @@ function Login() {
         setLoginFailMessage('User not found.');
        
       } else {
-        const response = await axios.get(`http://127.0.0.1:8000/api/users/${checkPhone.id}`);
+        const response = await axios.get(`https://attendance.rd-lab.work/api/users/${checkPhone.id}`);
         if (response.status === 200) {
           dispatch(authentication(response.data.users));
         }

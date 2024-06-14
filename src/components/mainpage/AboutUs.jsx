@@ -15,7 +15,7 @@ export default function AboutUs() {
 				<div className="absolute h-full w-full bg-black opacity-30"></div>
 				<img
 					className="h-full w-full object-cover object-center"
-					src="../images/aboutusdog.jpg"
+					src="https://www.lawnstarter.com/blog/wp-content/uploads/2023/08/pexels-blue-bird-7210705new-1.png"
 					alt="About us dog"
 				/>
 				<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center p-4">

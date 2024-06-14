@@ -115,7 +115,7 @@ export default function Profile(){
     console.log(updatedPost);
 
     axios
-      .put(`http://127.0.0.1:8000/api/posts/${id}`, updatedPost) // Use editModalPetId here
+      .put(`https://attendance.rd-lab.work/api/posts/${id}`, updatedPost) // Use editModalPetId here
       .then((response) => {
         setPost((prevPost) => prevPost.map((post) => (post.id === id ? response.data : post)));
       })
@@ -136,7 +136,7 @@ export default function Profile(){
     if (selectedPost) {
       
       axios
-        .put(`http://127.0.0.1:8000/api/posts/remove/${id}`, selectedPost)
+        .put(`https://attendance.rd-lab.work/api/posts/remove/${id}`, selectedPost)
         .then((response) => {
           console.log('Post removed successfully:', response.data);
           closeDeleteModal();
@@ -155,7 +155,7 @@ export default function Profile(){
     if (selectedPost) {
       
       axios
-        .put(`http://127.0.0.1:8000/api/posts/adopted/${id}`, selectedPost)
+        .put(`https://attendance.rd-lab.work/api/posts/adopted/${id}`, selectedPost)
         .then((response) => {
           console.log('Post adopted successfully:', response.data);
           closeDeleteModal();
@@ -217,7 +217,7 @@ export default function Profile(){
 
         if (!isNaN(categoryId)) {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/breeds');
+            const response = await axios.get('https://attendance.rd-lab.work/api/breeds');
             const filteredBreeds = response.data.breeds.filter((breed) => breed.cate_id === categoryId);
             setBreeds(filteredBreeds);
         } catch (error) {
@@ -254,7 +254,7 @@ export default function Profile(){
 
     const [category, setCategory] = useState([]);
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/categories')
+        axios.get('https://attendance.rd-lab.work/api/categories')
         .then((response) => {
             setCategory(response.data.category);
         })
@@ -265,7 +265,7 @@ export default function Profile(){
 
     const [shownBreeds, setShownBreeds] = useState([]);
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/breeds')
+        axios.get('https://attendance.rd-lab.work/api/breeds')
         .then((response) => {
             setShownBreeds(response.data.breeds);
         })
@@ -282,7 +282,7 @@ export default function Profile(){
   
         const [post, setPost] = useState([]);
         useEffect(() => {
-            axios.get('http://127.0.0.1:8000/api/posts')
+            axios.get('https://attendance.rd-lab.work/api/posts')
             .then((response) => {
               const userId = user.id;
               const filteredPosts = response.data.posts.filter(post => post.user_id === userId && !post.is_removed);
@@ -310,7 +310,7 @@ export default function Profile(){
           console.log(newRequest);
       
           axios
-            .post('http://127.0.0.1:8000/api/posts', newRequest)
+            .post('https://attendance.rd-lab.work/api/posts', newRequest)
             .then((response) => {
               setPost((prevPost) => [...prevPost, response.data]);
               
@@ -325,7 +325,7 @@ export default function Profile(){
   
         const [shownCategory, setShownCategory] = useState([]);
         useEffect(() => {
-          axios.get('http://127.0.0.1:8000/api/categories')
+          axios.get('https://attendance.rd-lab.work/api/categories')
             .then((response) => {
               setShownCategory(response.data.category);
             })
@@ -336,7 +336,7 @@ export default function Profile(){
   
         const [shownUser, setShownUser] = useState([]);
         useEffect(() => {
-          axios.get('http://127.0.0.1:8000/api/users')
+          axios.get('https://attendance.rd-lab.work/api/users')
             .then((response) => {
               setShownUser(response.data.users);
             })

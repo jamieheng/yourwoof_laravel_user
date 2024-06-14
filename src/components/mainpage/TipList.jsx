@@ -17,7 +17,7 @@ export default function TipList() {
 
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/tips')
+      .get('https://attendance.rd-lab.work/api/tips')
       .then((response) => {
         setTips(response.data.tips || []);
       })

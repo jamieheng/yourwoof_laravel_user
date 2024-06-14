@@ -23,7 +23,7 @@ const [isVerified, setIsVerified] = useState(false);
 
 useEffect(() => {
   axios
-    .get('http://127.0.0.1:8000/api/trackings')
+    .get('https://attendance.rd-lab.work/api/trackings')
     .then((response) => {
       setTracking(response.data.trackings);
     })
@@ -72,7 +72,7 @@ useEffect(() => {
         };
 
         axios
-            .put(`http://127.0.0.1:8000/api/trackings/updateWeek2/${userTracking.id}`, updatedWeek1Tracking)
+            .put(`https://attendance.rd-lab.work/api/trackings/updateWeek2/${userTracking.id}`, updatedWeek1Tracking)
             .then((response) => {
                 // Update the local tracking state with the updated tracking data
                 setTracking((prevTracking) => {
@@ -129,7 +129,7 @@ useEffect(() => {
         };
 
         axios
-            .put(`http://127.0.0.1:8000/api/trackings/updateWeek3/${userTracking.id}`, updatedWeek1Tracking)
+            .put(`https://attendance.rd-lab.work/api/trackings/updateWeek3/${userTracking.id}`, updatedWeek1Tracking)
             .then((response) => {
                 // Update the local tracking state with the updated tracking data
                 setTracking((prevTracking) => {
@@ -186,7 +186,7 @@ useEffect(() => {
         };
 
         axios
-            .put(`http://127.0.0.1:8000/api/trackings/updateWeek4/${userTracking.id}`, updatedWeek1Tracking)
+            .put(`https://attendance.rd-lab.work/api/trackings/updateWeek4/${userTracking.id}`, updatedWeek1Tracking)
             .then((response) => {
                 // Update the local tracking state with the updated tracking data
                 setTracking((prevTracking) => {
@@ -251,7 +251,7 @@ useEffect(() => {
         };
 
         axios
-            .put(`http://127.0.0.1:8000/api/trackings/updateWeek1/${userTracking.id}`, updatedWeek1Tracking)
+            .put(`https://attendance.rd-lab.work/api/trackings/updateWeek1/${userTracking.id}`, updatedWeek1Tracking)
             .then((response) => {
                 // Update the local tracking state with the updated tracking data
                 setTracking((prevTracking) => {
@@ -316,7 +316,7 @@ useEffect(() => {
         <div className='absolute h-full w-full bg-black opacity-75'></div>
         <img
           className='h-full w-full object-cover object-center bg-black opacity-50'
-          src='../images/trackingdog.jpg'
+          src='https://deerassociation.com/wp-content/uploads/2022/06/deer-tracking-dog-lead-760x480.jpg'
           alt='Tracking dog'
         />
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center p-4'>

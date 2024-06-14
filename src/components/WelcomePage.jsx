@@ -20,7 +20,7 @@ const WelcomePage = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/users')
+      .get('https://attendance.rd-lab.work/api/users')
       .then((response) => {
         setUsers(response.data.users);
       })
@@ -146,7 +146,7 @@ const WelcomePage = () => {
 			if (firebaseUser) {
 				console.log("HIIIIII");
 				const response = await axios.post(
-					"http://127.0.0.1:8000/api/users/register",
+					"https://attendance.rd-lab.work/api/users/register",
 					{
 						first_name: "hi",
 						last_name: "bye",

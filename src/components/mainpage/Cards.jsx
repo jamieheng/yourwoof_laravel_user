@@ -91,7 +91,7 @@ const [donations, setDonations] = useState([]);
     console.log(newDonation);
 
     axios
-      .post('http://127.0.0.1:8000/api/donations', newDonation)
+      .post('https://attendance.rd-lab.work/api/donations', newDonation)
       .then((response) => {
         setDonations((prevDonation) => [...prevDonation, response.data]);
         

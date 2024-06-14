@@ -87,7 +87,7 @@ const CategoryTable = () => {
   const deleteBreed = (id) => {
   
     axios
-      .delete(`http://127.0.0.1:8000/api/breeds/${id}`)
+      .delete(`https://attendance.rd-lab.work/api/breeds/${id}`)
       .then(() => {
         const updatedBreeds = breeds.filter((breed) => breed.id !== id);
         setBreeds(updatedBreeds); // Update the state with filtered breeds
@@ -104,7 +104,7 @@ const CategoryTable = () => {
  
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/categories')
+    axios.get('https://attendance.rd-lab.work/api/categories')
       .then((response) => {
         setCategory(response.data.category);
       })
@@ -114,7 +114,7 @@ const CategoryTable = () => {
   }, []);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/breeds')
+    axios.get('https://attendance.rd-lab.work/api/breeds')
       .then((response) => {
         setBreeds(response.data.breeds);
       })
@@ -136,7 +136,7 @@ const CategoryTable = () => {
     };
 
     axios
-      .post('http://127.0.0.1:8000/api/categories', newCategory)
+      .post('https://attendance.rd-lab.work/api/categories', newCategory)
       .then((response) => {
         setCategory((prevCategory) => [...prevCategory, response.data]);
         closeAddModal();
@@ -168,7 +168,7 @@ const CategoryTable = () => {
 
     console.log(newEditBreed)
     axios
-        .put(`http://127.0.0.1:8000/api/breeds/${id}`, newEditBreed)
+        .put(`https://attendance.rd-lab.work/api/breeds/${id}`, newEditBreed)
         .then((response) => {
             setCategory((prevBreed) =>
                 prevBreed.map((breed) =>
@@ -201,7 +201,7 @@ const CategoryTable = () => {
       breed_name: breedName,
   };
 
-  axios.post('http://127.0.0.1:8000/api/breeds', newBreed)
+  axios.post('https://attendance.rd-lab.work/api/breeds', newBreed)
       .then((response) => {
           setBreeds((prevBreeds) => [...prevBreeds, response.data]);
           fetchBreeds();
@@ -217,7 +217,7 @@ const CategoryTable = () => {
         cate_name: categoryName,
     };
 
-    axios.put(`http://127.0.0.1:8000/api/categories/${id}`, updatedCategory)
+    axios.put(`https://attendance.rd-lab.work/api/categories/${id}`, updatedCategory)
         .then((response) => {
             // Update categories state with the updated category
             setCategory((prevCategories) =>
@@ -235,7 +235,7 @@ const CategoryTable = () => {
 
   const deleteCategory = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/api/categories/${id}`)
+      .delete(`https://attendance.rd-lab.work/api/categories/${id}`)
       .then(() => {
         const updatedCategory = category.filter((cat) => cat.id !== id);
         setCategory(updatedCategory);
@@ -249,7 +249,7 @@ const CategoryTable = () => {
   
   const fetchCategory = () => {
     axios
-      .get('http://127.0.0.1:8000/api/categories')
+      .get('https://attendance.rd-lab.work/api/categories')
       .then((response) => {
         setCategory(response.data.categories || []); // Ensure an empty array is set if data is undefined
       })
@@ -261,7 +261,7 @@ const CategoryTable = () => {
   
   const fetchBreeds = () => {
     axios
-      .get('http://127.0.0.1:8000/api/breeds')
+      .get('https://attendance.rd-lab.work/api/breeds')
       .then((response) => {
         setBreeds(response.data.breeds || []); // Ensure an empty array is set if data is undefined
       })

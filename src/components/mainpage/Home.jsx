@@ -26,7 +26,7 @@ export default function Home() {
   const [pets, setPets] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/pets')
+      .get('https://attendance.rd-lab.work/api/pets')
       .then((response) => {
         setPets(response.data.pets);
       })
@@ -57,7 +57,7 @@ export default function Home() {
     console.log(newRequest);
 
     axios
-      .post('http://127.0.0.1:8000/api/surrenders', newRequest)
+      .post('https://attendance.rd-lab.work/api/surrenders', newRequest)
       .then((response) => {
         setSurrenderRequest((prevSurrenderRequest) => [...prevSurrenderRequest, response.data]);
       })
@@ -159,7 +159,7 @@ export default function Home() {
 
     if (!isNaN(categoryId)) {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/breeds');
+        const response = await axios.get('https://attendance.rd-lab.work/api/breeds');
         const filteredBreeds = response.data.breeds.filter((breed) => breed.cate_id === categoryId);
         setBreeds(filteredBreeds);
       } catch (error) {
@@ -198,7 +198,7 @@ export default function Home() {
 
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/categories')
+    axios.get('https://attendance.rd-lab.work/api/categories')
       .then((response) => {
         setCategory(response.data.category);
       })
@@ -209,7 +209,7 @@ export default function Home() {
 
   const [shownBreeds, setShownBreeds] = useState([]);
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/breeds')
+    axios.get('https://attendance.rd-lab.work/api/breeds')
       .then((response) => {
         setShownBreeds(response.data.breeds);
       })
@@ -293,7 +293,7 @@ export default function Home() {
 
       <div className='w-full flex flex-col items-center justify-center mb-4 lg:h-96'>
         <img
-          src={require('./../assets/images/rescue.jpeg')}
+          src="https://lifelineanimal.org/wp-content/uploads/2022/01/state-of-the-shelters-blog-post-header.jpg"
           alt='logo'
           className='w-full md:w-full lg:w-full h-full object-cover object-center'
         />
@@ -524,7 +524,7 @@ export default function Home() {
             shadow={false}
             color='transparent'
             className='absolute inset-0 m-0 h-full w-full rounded-none bg-cover bg-center'
-            style={{ backgroundImage: "url('../images/vaccinateddog.jpg')" }}
+            style={{ backgroundImage: "url(https://images.vetster.com/dog_vaccine_612px408px_cfb8ccde8b.jpg)" }}
           >
             <div className='to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50' />
           </CardHeader>
@@ -546,7 +546,7 @@ export default function Home() {
             shadow={false}
             color='transparent'
             className='absolute inset-0 m-0 h-full w-full rounded-none bg-cover bg-center'
-            style={{ backgroundImage: "url('../images/puppies.jpg')" }}
+            style={{ backgroundImage: "url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/newscms/2021_18/1713662/sudden-loss-of-pet-mc-inline-210506-02.jpg)" }}
           >
             <div className='to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50' />
           </CardHeader>
@@ -568,7 +568,7 @@ export default function Home() {
             shadow={false}
             color='transparent'
             className='absolute inset-0 m-0 h-full w-full rounded-none bg-cover bg-center'
-            style={{ backgroundImage: "url('../images/disableddog.webp')" }}
+            style={{ backgroundImage: "url(https://www.spcai.org/wp-content/uploads/2020/01/Betty_Liechtenstein-scaled.jpg)" }}
           >
             <div className='to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50' />
           </CardHeader>

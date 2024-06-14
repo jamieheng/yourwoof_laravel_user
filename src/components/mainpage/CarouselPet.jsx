@@ -20,17 +20,17 @@ export default function CarouselPet() {
       )}
     >
       <img
-        src="../images/slider_bw1.jpeg"
+        src="https://i.pinimg.com/564x/8c/40/75/8c407526391d0874e3ed95f50fa5e3fc.jpg"
         alt="image 1"
         className="h-full w-full object-cover"
       />
       <img
-        src="../images/slider_bw2.jpeg"
+        src="https://i.pinimg.com/564x/58/6c/7c/586c7c1310d252e8be58399815b74e2f.jpg"
         alt="image 2"
         className="h-full w-full object-cover"
       />
       <img
-        src="../images/slider_bw3.jpeg"
+        src="https://i.pinimg.com/564x/22/74/bd/2274bdf3de630f49d59bbbcb48066e49.jpg"
         alt="image 3"
         className="h-full w-full object-cover"
       />

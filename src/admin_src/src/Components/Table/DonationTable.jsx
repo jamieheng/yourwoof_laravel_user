@@ -40,8 +40,8 @@ const DonationTable = () => {
 
   useEffect(() => {
     axios.all([
-      axios.get('http://127.0.0.1:8000/api/donations'),
-      axios.get('http://127.0.0.1:8000/api/users'),
+      axios.get('https://attendance.rd-lab.work/api/donations'),
+      axios.get('https://attendance.rd-lab.work/api/users'),
       
     ])
     .then(axios.spread((donationResponse, usersResponse) => {

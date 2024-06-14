@@ -83,7 +83,7 @@ const TipsListiongTable = () => {
   const deleteTip = (id) => {
 
       axios
-        .delete(`http://127.0.0.1:8000/api/tips/${id}`)
+        .delete(`https://attendance.rd-lab.work/api/tips/${id}`)
         .then((response) => {
           console.log('Post deleted successfully:', response.data);
           closeDeleteModal();
@@ -106,7 +106,7 @@ const TipsListiongTable = () => {
     console.log(updatedTip);
 
     axios
-      .put(`http://127.0.0.1:8000/api/tips/${id}`, updatedTip) 
+      .put(`https://attendance.rd-lab.work/api/tips/${id}`, updatedTip) 
       .then((response) => {
         setTips((prevTip) => prevTip.map((tip) => (tip.id === id ? response.data : tip)));
         fetchTips(); 
@@ -168,7 +168,7 @@ const TipsListiongTable = () => {
     console.log(newTip);
   
     axios
-      .post('http://127.0.0.1:8000/api/tips', newTip)
+      .post('https://attendance.rd-lab.work/api/tips', newTip)
       .then((response) => {
         setTips((prevTips) => [...prevTips, response.data]);
         fetchTips(); 
@@ -181,7 +181,7 @@ const TipsListiongTable = () => {
 
   const fetchTips = () => {
     axios
-      .get('http://127.0.0.1:8000/api/tips')
+      .get('https://attendance.rd-lab.work/api/tips')
       .then((response) => {
         setTips(response.data.tips);
       })
@@ -209,7 +209,7 @@ const TipsListiongTable = () => {
   const [tips, setTips] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/tips')
+      .get('https://attendance.rd-lab.work/api/tips')
       .then((response) => {
         
         setTips(response.data.tips);

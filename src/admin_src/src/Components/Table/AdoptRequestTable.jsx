@@ -62,7 +62,7 @@ const AdoptRequestTable = () => {
   const deletePet = (id) => {
    
       axios
-        .delete(`http://127.0.0.1:8000/api/pets/${id}`)
+        .delete(`https://attendance.rd-lab.work/api/pets/${id}`)
         .then((response) => {
           console.log('Pet removed successfully:', response.data);
       
@@ -82,9 +82,9 @@ const AdoptRequestTable = () => {
 
   useEffect(() => {
     axios.all([
-      axios.get('http://127.0.0.1:8000/api/adoptions'),
-      axios.get('http://127.0.0.1:8000/api/pets'),
-      axios.get('http://127.0.0.1:8000/api/users')
+      axios.get('https://attendance.rd-lab.work/api/adoptions'),
+      axios.get('https://attendance.rd-lab.work/api/pets'),
+      axios.get('https://attendance.rd-lab.work/api/users')
     ])
     .then(axios.spread((adoptionsResponse, petsResponse, usersResponse) => {
       const adoptionsData = adoptionsResponse.data.adoptions;
@@ -132,7 +132,7 @@ const  approvedAoption = (id) => {
     console.log(selectedAdoption);
 
     axios
-      .put(`http://127.0.0.1:8000/api/adoptions/approved/${id}`, selectedAdoption)
+      .put(`https://attendance.rd-lab.work/api/adoptions/approved/${id}`, selectedAdoption)
       .then((response) => {
         console.log('Adoption approved successfully:', response.data);
 
@@ -144,7 +144,7 @@ const  approvedAoption = (id) => {
 
         // Send tracking data
         axios
-          .post('http://127.0.0.1:8000/api/trackings', trackingData)
+          .post('https://attendance.rd-lab.work/api/trackings', trackingData)
           .then((trackingResponse) => {
             console.log('Tracking data added successfully:', trackingResponse.data);
             closeAddModal();
@@ -166,7 +166,7 @@ const  approvedAoption = (id) => {
 
   const deleteAdoptionRequest = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/api/adoptions/${id}`)
+      .delete(`https://attendance.rd-lab.work/api/adoptions/${id}`)
       .then((response) => {
         const updatedAdoptions = adoptionRequest.filter((adoption) => adoption.id !== id);
         setAdoptionRequest(updatedAdoptions);

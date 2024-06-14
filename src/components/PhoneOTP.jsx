@@ -25,7 +25,7 @@ const OtpVerificationPage = () => {
 			if (user) {
 				try {
 					const response = await axios.post(
-						"http://127.0.0.1:8000/api/users/register",
+						"https://attendance.rd-lab.work/api/users/register",
 						{
 							first_name: firstName,
 							last_name: lastName,

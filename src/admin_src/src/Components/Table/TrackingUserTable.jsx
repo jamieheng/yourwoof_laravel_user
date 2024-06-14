@@ -32,9 +32,9 @@ const TrackingtrackingTable = () => {
 
   useEffect(() => {
     axios.all([
-      axios.get('http://127.0.0.1:8000/api/trackings'),
-      axios.get('http://127.0.0.1:8000/api/pets?withTrashed=true'),
-      axios.get('http://127.0.0.1:8000/api/users')
+      axios.get('https://attendance.rd-lab.work/api/trackings'),
+      axios.get('https://attendance.rd-lab.work/api/pets?withTrashed=true'),
+      axios.get('https://attendance.rd-lab.work/api/users')
     ])
     .then(axios.spread((trackingResponse, petsResponse, usersResponse) => {
       const trackingData = trackingResponse.data.trackings;
@@ -106,7 +106,7 @@ const TrackingtrackingTable = () => {
     if (selectedTracking) {
       
       axios
-        .put(`http://127.0.0.1:8000/api/trackings/completed/${id}`, selectedTracking)
+        .put(`https://attendance.rd-lab.work/api/trackings/completed/${id}`, selectedTracking)
         .then((response) => {
           console.log('User added successfully:', response.data);
           closeDeleteModal()

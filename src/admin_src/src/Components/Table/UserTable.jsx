@@ -83,7 +83,7 @@ const UserTable = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/users')
+      .get('https://attendance.rd-lab.work/api/users')
       .then((response) => {
         const data = response.data.users;
         // Assuming `data` is an array of users, and each user has an `is_verified` property
@@ -106,7 +106,7 @@ const UserTable = () => {
     };
 
     axios
-      .put(`http://127.0.0.1:8000/api/users/update/${id}`, updatedUser)
+      .put(`https://attendance.rd-lab.work/api/users/update/${id}`, updatedUser)
       .then((response) => {
         setUsers((prevUsers) => prevUsers.map((user) => (user.id === id ? response.data : user)));
         closeEditModal();
@@ -119,7 +119,7 @@ const UserTable = () => {
 
   const deleteUser = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/api/users/${id}`)
+      .delete(`https://attendance.rd-lab.work/api/users/${id}`)
       .then((response) => {
         const updatedUsers = users.filter((user) => user.id !== id);
         setUsers(updatedUsers);

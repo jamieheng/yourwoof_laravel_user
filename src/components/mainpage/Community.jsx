@@ -127,7 +127,7 @@ export default function Community(){
    
         if (!isNaN(categoryId)) {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/breeds');
+            const response = await axios.get('https://attendance.rd-lab.work/api/breeds');
             const filteredBreeds = response.data.breeds.filter((breed) => breed.cate_id === categoryId);
             setBreeds(filteredBreeds);
         } catch (error) {
@@ -164,7 +164,7 @@ export default function Community(){
 
     const [category, setCategory] = useState([]);
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/categories')
+        axios.get('https://attendance.rd-lab.work/api/categories')
         .then((response) => {
             setCategory(response.data.category);
         })
@@ -181,7 +181,7 @@ export default function Community(){
 
       const [post, setPost] = useState([]);
       useEffect(() => {
-          axios.get('http://127.0.0.1:8000/api/posts')
+          axios.get('https://attendance.rd-lab.work/api/posts')
           .then((response) => {
             const posts = response.data.posts.filter((post) => !post.is_removed && !post.is_invalid && !post.is_adopted && post.is_approved);
             setPost(posts);
@@ -207,7 +207,7 @@ export default function Community(){
         console.log(newRequest);
     
         axios
-          .post('http://127.0.0.1:8000/api/posts', newRequest)
+          .post('https://attendance.rd-lab.work/api/posts', newRequest)
           .then((response) => {
             setPost((prevPost) => [...prevPost, response.data]);
             
@@ -220,7 +220,7 @@ export default function Community(){
 
       const [shownBreeds, setShownBreeds] = useState([]);
       useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/breeds')
+        axios.get('https://attendance.rd-lab.work/api/breeds')
           .then((response) => {
             setShownBreeds(response.data.breeds);
           })
@@ -231,7 +231,7 @@ export default function Community(){
 
       const [shownCategory, setShownCategory] = useState([]);
       useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/categories')
+        axios.get('https://attendance.rd-lab.work/api/categories')
           .then((response) => {
             setShownCategory(response.data.category);
           })
@@ -242,7 +242,7 @@ export default function Community(){
 
       const [shownUser, setShownUser] = useState([]);
       useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/users')
+        axios.get('https://attendance.rd-lab.work/api/users')
           .then((response) => {
             setShownUser(response.data.users);
           })

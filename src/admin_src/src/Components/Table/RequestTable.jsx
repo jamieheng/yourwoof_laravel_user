@@ -63,7 +63,7 @@ const RequestTable = () => {
 
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/users')
+      .get('https://attendance.rd-lab.work/api/users')
       .then((response) => {
         const data = response.data.users;
         // Assuming `data` is an array of users, and each user has an `is_verified` property
@@ -85,7 +85,7 @@ const RequestTable = () => {
   const addUserRequest = (id) => {
     if (selectedUser) {
       axios
-        .put(`http://127.0.0.1:8000/api/users/verified/${id}`, selectedUser)
+        .put(`https://attendance.rd-lab.work/api/users/verified/${id}`, selectedUser)
         .then((response) => {
           console.log('User added successfully:', response.data);
           closeAddModal();
@@ -99,7 +99,7 @@ const RequestTable = () => {
 
   const deleteUserRequest = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/api/users/${id}`)
+      .delete(`https://attendance.rd-lab.work/api/users/${id}`)
       .then((response) => {
         const updatedUsers = userRequest.filter((user) => user.id !== id);
         setUserRequest(updatedUsers);
@@ -113,7 +113,7 @@ const RequestTable = () => {
 
   // const fetchUserRequest = () => {
   //   axios
-  //     .get('http://127.0.0.1:8000/api/tips')
+  //     .get('https://attendance.rd-lab.work/api/tips')
   //     .then((response) => {
   //       setUserRequest(response.data.users);
   //     })
