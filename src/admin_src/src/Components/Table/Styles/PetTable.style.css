@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles/PetTable.style.css */
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(1px) !important;
+  }
+  

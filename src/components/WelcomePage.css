@@ -1,0 +1,114 @@
+/* CSS file */
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.email {
+	margin-bottom: 10px;
+}
+
+.bg-container {
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.welcome-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-family: Verdana, sans-serif;
+	position: absolute;
+	text-align: center;
+	padding: 5%;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin: 0 auto;
+}
+
+.dog-logo {
+	width: 80%;
+	max-width: 300px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+.welcome-title {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 1rem;
+}
+
+.welcome-message {
+	font-size: 1.5rem;
+	color: white;
+	margin-bottom: 2rem;
+}
+
+.signin-message {
+	font-size: 1.5rem;
+	color: #333;
+	margin-bottom: 2rem;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Verdana, sans-serif;
+	background-color: #fafafa;
+	color: #000000;
+	padding: 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-bottom: 1rem;
+}
+
+.signin-button {
+	margin-top: 10px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #e1affd;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.signin-button:hover {
+	background-color: palevioletred;
+	transform: translateY(-2px);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-icon {
+	width: 20px;
+	margin-right: 8px;
+}
+
+.button:hover {
+	background-color: #e1affd;
+}
+
+/* Add this to your stylesheet */
+.is-invalid {
+	border: 1px solid #dc3545 !important;
+}
+
+.invalid-feedback {
+	color: #dc3545;
+	font-size: 0.875rem; /* Adjust the font size if needed */
+}
