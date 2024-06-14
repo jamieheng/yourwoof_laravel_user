@@ -22,7 +22,7 @@ import OtpVerificationPage from "./components/PhoneOTP";
 import Profile from "./components/mainpage/Profile";
 import DonationCard from "./components/mainpage/Cards";
 
-// Admin routes
+// Admin routess
 import Sidebar from "./admin_src/src/Components/SideNavBar/SideBar";
 import Adoption from "./admin_src/src/Screens/Adoption/Adoption";
 import Dashboard from "./admin_src/src/Screens/Dashboard/Dashboard";
