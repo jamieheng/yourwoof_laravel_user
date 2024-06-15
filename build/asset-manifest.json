@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ba80a5f2.css",
+    "main.js": "/static/js/main.80b10776.js",
+    "static/js/787.12ccc6a6.chunk.js": "/static/js/787.12ccc6a6.chunk.js",
+    "static/media/ta.jpg": "/static/media/ta.076510d11cb6c65fdb57.jpg",
+    "static/media/ngou.jpg": "/static/media/ngou.1a2141e12f771cc007b9.jpg",
+    "static/media/ry.jpg": "/static/media/ry.0a6329ef346e19af8f07.jpg",
+    "static/media/model.jpg": "/static/media/model.1b6dc5504c2e71b117b4.jpg",
+    "static/media/admin.png": "/static/media/admin.8339d5167e0b04b7639c.png",
+    "static/media/reach.jpg": "/static/media/reach.fe6b6ba7cdc34acc6121.jpg",
+    "static/media/h.jpg": "/static/media/h.c12311a11af9e0fdc23d.jpg",
+    "static/media/khqr.jpeg": "/static/media/khqr.3248f2f31ae34b2f01e9.jpeg",
+    "static/media/sm-logo.png": "/static/media/sm-logo.8f58400c88f12c086fa2.png",
+    "index.html": "/index.html",
+    "main.ba80a5f2.css.map": "/static/css/main.ba80a5f2.css.map",
+    "main.80b10776.js.map": "/static/js/main.80b10776.js.map",
+    "787.12ccc6a6.chunk.js.map": "/static/js/787.12ccc6a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba80a5f2.css",
+    "static/js/main.80b10776.js"
+  ]
+}

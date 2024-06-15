@@ -13,6 +13,9 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 
+const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+
+
 const WelcomePage = () => {
 	
 
@@ -123,51 +126,51 @@ const WelcomePage = () => {
 	const handleGoogleLoginSuccess = async (codeResponse) => {
 		const idToken = codeResponse.credential;
 		const accessToken = codeResponse.accessToken;
-
+	  
 		const credential = firebase.auth.GoogleAuthProvider.credential(
-			idToken,
-			accessToken
+		 idToken,
+		 accessToken
 		);
-
+	  
 		try {
-			const userCredential = await firebase
-				.auth()
-				.signInWithCredential(credential);
-
-			// User successfully signed in
-			const firebaseUser = userCredential.user;
-			console.log("User signed in:", firebaseUser);
-
-			// Dispatch authentication action
-			dispatch(authentication(firebaseUser));
-			navigate("/");
-
-			// Example of how to add the user to your database
-			if (firebaseUser) {
-				console.log("HIIIIII");
-				const response = await axios.post(
-					"https://attendance.rd-lab.work/api/users/register",
-					{
-						first_name: "hi",
-						last_name: "bye",
-						email: "hi@example.com",
-						phone: "",
-						password: "",
-						address: "",
-					}
-				);
-
-				dispatch(authentication(response.data.users));
-				window.location.reload();
-
-				navigate("/");
-			}
+		 const userCredential = await firebase
+		  .auth()
+		  .signInWithCredential(credential);
+	  
+		 // User successfully signed in
+		 const firebaseUser = userCredential.user;
+		 console.log("User signed in:", firebaseUser);
+	  
+		 // Dispatch authentication action
+		 dispatch(authentication(firebaseUser));
+		 navigate("/");
+	  
+		 // Example of how to add the user to your database
+		 if (firebaseUser) {
+		  console.log("HIIIIII");
+		  const response = await axios.post(
+		   "http://127.0.0.1:8000/api/users/register",
+		   {
+			first_name: "hi",
+			last_name: "bye",
+			email: "hi@example.com",
+			phone: "",
+			password: "",
+			address: "",
+		   }
+		  );
+	  
+		  dispatch(authentication(response.data.users));
+		  window.location.reload();
+	  
+		  navigate("/");
+		 }
 		} catch (error) {
-			// Handle errors here
-			console.error("Firebase sign-in error:", error);
-			// Set error message state or handle error as needed
+		 // Handle errors here
+		 console.error("Firebase sign-in error:", error);
+		 // Set error message state or handle error as needed
 		}
-	};
+	   };
 
   const [validPassword, setValidPassword] = useState(true);
   const [validPhone, setValidPhone] = useState(true);
@@ -284,8 +287,7 @@ const WelcomePage = () => {
                     type='tel' // Use type='tel' for telephone numbers
                     pattern='^\d{8,9}$' // Optional: HTML5 pattern for validation (accepts only 8-9 digits)
                     required
-                    className='form-control w-full bg-transparent pl-14'
-                    value={phone} // Bind value to state
+                    className='form-control w-full bg-transparent pl-16'
                     value={phone} 
                   />
                 </div>
@@ -343,16 +345,14 @@ const WelcomePage = () => {
 							Register
 						</button>
 
-						<GoogleOAuthProvider className="btn  btn-primary bg-lavender font-raleway hover:bg-darkpurple transform hover:-translate-y-2 transition-transform duration-300 px-8 py-3 text-lg rounded-lg">
-						<GoogleLogin
-							className="w-full"
-							clientId="327622369580-6i4lvbsc0s0jok5shee0r6olllbtie4c.apps.googleusercontent.com"
-							onSuccess={handleGoogleLoginSuccess}
-							onError={() => {
-							console.log("Login Failed");
-							}}
-						/>
-						</GoogleOAuthProvider>
+						<GoogleOAuthProvider clientId={clientId}>
+       <GoogleLogin
+        onSuccess={handleGoogleLoginSuccess}
+        onError={() => {
+         console.log("Login Failed");
+        }}
+       />
+      </GoogleOAuthProvider>
 					</div>
 				</form>
 
