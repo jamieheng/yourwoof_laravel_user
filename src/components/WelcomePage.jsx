@@ -286,6 +286,7 @@ const WelcomePage = () => {
                     required
                     className='form-control w-full bg-transparent pl-14'
                     value={phone} // Bind value to state
+                    value={phone} 
                   />
                 </div>
                {!validPhone ? <p className="text-red w-80 text-center p-2">Phone number is already taken.</p>  : "" }
