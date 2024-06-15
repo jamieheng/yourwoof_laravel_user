@@ -65,7 +65,7 @@ function Login() {
       <div
         className='welcome-image bg-blue-dark w-full lg:w-1/2 h-64 lg:h-full'
         style={{
-          backgroundImage: `url(../images/dogbg.png)`,
+          backgroundImage: `url(https://cdn.dribbble.com/users/2893989/screenshots/13664138/media/edccbd35e7a4a74a84128f8facc5958f.png?resize=1600x1200&vertical=center)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

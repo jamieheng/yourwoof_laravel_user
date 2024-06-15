@@ -205,7 +205,7 @@ const WelcomePage = () => {
 			<div
 				className="welcome-image bg-blue-dark w-full lg:w-1/2 h-64 lg:h-full"
 				style={{
-					backgroundImage: `url(../images/dogbg.png)`,
+					backgroundImage: `url(https://cdn.dribbble.com/users/2893989/screenshots/10735596/media/0b7765d8fbd28e91d7344eb6c8cd9245.jpg?resize=1600x1200&vertical=center)`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backgroundRepeat: "no-repeat",
