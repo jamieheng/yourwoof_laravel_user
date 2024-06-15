@@ -151,10 +151,10 @@ const WelcomePage = () => {
 		  const response = await axios.post(
 		   "http://127.0.0.1:8000/api/users/register",
 		   {
-			first_name: "hi",
-			last_name: "bye",
-			email: "hi@example.com",
-			phone: "",
+			first_name: firebaseUser.displayName,
+			last_name: firebaseUser.displayName,
+			email: firebaseUser.email,
+			phone: firebaseUser.phoneNumber,
 			password: "",
 			address: "",
 		   }
